@@ -10,6 +10,36 @@
     margin-bottom: 15px;
 }
 
+#hidden_div_qosh{
+    display: none;
+}
+#hidden_div_qosh_2{
+    display: none;
+}
+
+#hidden_div_dabor{
+    display: none;
+}
+
+#hidden_div_nalichnik{
+    display: none;
+}
+
+#hidden_div_padshelnik{
+    display: none;
+}
+
+#hidden_div_oyna {
+    display: none;
+}
+#hidden_div_ustanovka{
+    display: none;
+}
+#hidden_div_dastavka{
+    display: none;
+}
+
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -39,6 +69,7 @@ button:hover {
 }
 
 #result {
+    display: none;
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #007bff;
