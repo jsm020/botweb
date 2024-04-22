@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Door Cost Calculator</h2>
+        <form id="doorForm">
+            <div class="form-group">
+                <label for="eshikMaterial">Eshik materialini tanlang:</label>
+                <select id="eshikMaterial" name="material">
+                    <option value="laminad">Laminad</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eshikRazmer">Eshik razmerini yozing:</label>
+                <input type="text" id="eshikRazmer" name="razmer" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <label for="eshikKvadratPrice">Eshik kvadrat narx tanlang:</label>
+                <select id="eshikKvadratPrice" name="eshikKvadratPrice">
+                    <option value="650">DO-650</option>
+                    <option value="600">Dr-600</option>
+                    <option value="750">Tillo Do-750</option>
+                    <option value="700">Tillo Dg-700</option>
+                    <option value="750">Kumush Do-750</option>
+                    <option value="700">Kumush Dg-700</option>
+                    <option value="550">Or steklo - 550</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eshikZamok">Zamok narxini yozing:</label>
+                <input type="text" id="eshikZamok" name="zamok" placeholder="Zamok narxini yozing:">
+            </div>
+            <div class="form-group">
+                <label for="eshikPetle">Petle tanlang:</label>
+                <select id="eshikPetle" name="Petle">
+                    <option value="40">Socoth-40</option>
+                    <option value="60">Nobel-60</option>
+                    <option value="20">Dima-20</option>
+                    <option value="500">Skritiy-500</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Qosh bor yoki yuq:</label>
+                <label><input type="radio" name="qosh" value="bor"> Bor</label>
+                <label><input type="radio" name="qosh" value="yuq"> Yuq</label>
+            </div>
+            <!-- agar bor danlasa duty bor yoki yuq chiqishi kerak -->
+            <div class="form-group">
+                <label>oddiy yoki duty:</label>
+                <label><input type="radio" name="qosh_2" value="bor"> Oddiy</label>
+                <label><input type="radio" name="qosh_2" value="yuq"> Duty</label>
+            </div>
+            <div class="form-group">
+                <label for="eshikQoshNumber">Qosh soni</label>
+                <input type="text" id="eshikQoshNumber" name="qoshNumber" placeholder="Qosh soni">
+            </div>
+            <div class="form-group">
+                <label for="eshikDoll">Qo'g'irchoq necha para</label>
+                <input type="text" id="eshikDoll" name="doll" placeholder="Qo'g'irchoq necha para">
+            </div>
+            <div class="form-group">
+                <label>Dabor bor yoki yuq:</label>
+                <label><input type="radio" name="dabor" value="bor"> bor</label>
+                <label><input type="radio" name="dabor" value="yuq"> yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="DaborRazmer">Dabor razmer</label>
+                <input type="text" id="DaborRazmer" name="Dabor" placeholder="Dabor razmer">
+            </div>
+            <div class="form-group">
+                <label>Nalichnik bor yoki yuq:</label>
+                <label><input type="radio" name="Nalichnik" value="bor">bor</label>
+                <label><input type="radio" name="Nalichnik" value="yuq">yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="NalichnikeshikRazmer">Nalichnik razmer</label>
+                <input type="text" id="NalichnikeshikRazmer" name="Nalichnik" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <label>Padshelnik bor yoki yuq:</label>
+                <label><input type="radio" name="padshelnik" value="bor"> bor</label>
+                <label><input type="radio" name="padshelnik" value="yuq"> yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="eshikRazmer">Padshelnik razmer</label>
+                <input type="text" id="eshikRazmer" name="razmer" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <label>Qushimcha oyna bor yoki yuq:</label>
+                <label><input type="radio" name="oyna" value="bor"> bor</label>
+                <label><input type="radio" name="oyna" value="yuq"> yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="eshikRazmer">oyna necha dona</label>
+                <input type="number" id="eshikRazmer" name="razmer" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <label>ustanovka bor yoki yuq:</label>
+                <label><input type="radio" name="ustanovka" value="bor"> bor</label>
+                <label><input type="radio" name="ustanovka" value="yuq"> yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="eshikRazmer">Ustanovka narx</label>
+                <input type="number" id="eshikRazmer" name="razmer" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <label>Dastavka bor yoki yuq:</label>
+                <label><input type="radio" name="dastavka" value="bor"> bor</label>
+                <label><input type="radio" name="dastavka" value="yuq"> yuq</label>
+            </div>
+            <div class="form-group">
+                <label for="eshikRazmer">Dastavka narxi</label>
+                <input type="text" id="eshikRazmer" name="razmer" placeholder="Quidagi tartibda eshik razmerini yozing: 0.65x2 0.75x2">
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="calculateCost()">Hisoblash</button>
+            </div>
+        </form>
+        <div id="result">
+            <h3>Hisoblangan Narx:11111</h3>
+            <p id="totalCost"></p>
+        </div>
+    </div>
+
+</body>
+</html>
