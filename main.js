@@ -84,14 +84,61 @@ daborInputs.forEach(input => {
     });
 });
 
-var NalichnikInputs = document.querySelectorAll('input[name="Nalichnik"]');
+var padshelnik = document.querySelectorAll('input[name="padshelnik"]');
 
-NalichnikInputs.forEach(input => {
+padshelnik.forEach(input => {
     input.addEventListener('click', event => {
         if (event.target.value === "bor") {
-            document.querySelector('#hidden_div_nalichnik').style.display = 'block';
+            document.querySelector('#hidden_div_padshelnik').style.display = 'block';
         } else {
-            document.querySelector('#hidden_div_nalichnik').style.display = 'none';
+            document.querySelector('#hidden_div_padshelnik').style.display = 'none';
+        }
+    });
+});
+// var NalichnikInputs = document.querySelectorAll('input[name="Nalichnik"]');
+
+// NalichnikInputs.forEach(input => {
+//     input.addEventListener('click', event => {
+//         if (event.target.value === "bor") {
+//             document.querySelector('#hidden_div_nalichnik').style.display = 'block';
+//         } else {
+//             document.querySelector('#hidden_div_nalichnik').style.display = 'none';
+//         }
+//     });
+// });
+
+var addOynaInputs = document.querySelectorAll('input[name="oyna"]');
+
+addOynaInputs.forEach(input => {
+    input.addEventListener('click', event => {
+        if (event.target.value === "bor") {
+            document.querySelector('#hidden_div_oyna').style.display = 'block';
+        } else {
+            document.querySelector('#hidden_div_oyna').style.display = 'none';
+        }
+    });
+});
+
+var ustanovkaInputs = document.querySelectorAll('input[name="ustanovka"]');
+
+ustanovkaInputs.forEach(input => {
+    input.addEventListener('click', event => {
+        if (event.target.value === "bor") {
+            document.querySelector('#hidden_div_ustanovka').style.display = 'block';
+        } else {
+            document.querySelector('#hidden_div_ustanovka').style.display = 'none';
+        }
+    });
+});
+
+var dastavkaInputs = document.querySelectorAll('input[name="dastavka"]');
+
+dastavkaInputs.forEach(input => {
+    input.addEventListener('click', event => {
+        if (event.target.value === "bor") {
+            document.querySelector('#hidden_div_dastavka').style.display = 'block';
+        } else {
+            document.querySelector('#hidden_div_dastavka').style.display = 'none';
         }
     });
 });
@@ -153,7 +200,6 @@ function calculateCost() {
     if (qosh_bor_yoki_yuq.toLowerCase() === "bor") {
         let qosh_oddiy_yoki_duti = document.querySelector('input[name="qosh_2"]:checked').value.toLowerCase();
         let qosh_soni = document.getElementById('eshikQoshNumber').value;
-        alert(qosh_soni)
         let qosh_split = qosh_soni.split(' ');
         let new_material = Qosh_narxlari[material];
         let qosh_narxi_all = 0;
@@ -201,16 +247,78 @@ function calculateCost() {
         result["dabor_narx"] = 0;
     }
 
-    let padshelnik_bor_yoki_yuq = prompt("XA yoki Yuq: Padshelnik hisoblansinmi? ");
-    if (padshelnik_bor_yoki_yuq.toLowerCase() === "xa") {
-        let patshelnik = parseFloat(prompt("podshelnik necha metr(umumiy)?"));
+    let padshelnik_bor_yoki_yuq = document.querySelector('input[name="padshelnik"]:checked').value.toLowerCase()
+    if (padshelnik_bor_yoki_yuq.toLowerCase() === "bor") {
+        let patshelnik = document.getElementById('PadshelnikeshikRazmer').value;
         let narxi = patshelnik_price[material] * patshelnik;
         result["patshelnik_narx"] = narxi;
     } else {
         result["patshelnik_narx"] = 0;
     }
 
-    console.log(result)
+
+    let nalichnik_8_yoki_10 = document.getElementById('eshiknalichni').value
+    let nalichnik = document.getElementById('NalichnikeshikRazmer').value
+    let nalichni_summa = nalichnik_8_yoki_10 * nalichnik;
+    result["nalichnik_narx"] = nalichni_summa;
+    
+
+    let oyna_bor_yoki_yuq = document.querySelector('input[name="oyna"]:checked').value.toLowerCase();
+    if (oyna_bor_yoki_yuq.toLowerCase() === "bor") {
+        let oyna_narxi = 150;
+        let oyna_soni = document.getElementById('oynaNumber').value
+        let oyna_summa = oyna_narxi * oyna_soni;
+        result["oyna_summa"] = oyna_summa;
+    } else {
+        result["oyna_summa"] = 0;
+    }
+        
+    let ustanovka_bor_yoki_yuq = document.querySelector('input[name="ustanovka"]:checked').value.toLowerCase()
+    if (ustanovka_bor_yoki_yuq.toLowerCase() === "bor") {
+        let ustanovka_narxi = document.getElementById('eshikustanovka').value
+        result["ustanovka_narx"] = ustanovka_narxi;
+    } else {
+        result["ustanovka_narx"] = 0;
+    }
+    
+    let dastavka_bor_yoki_yuq = document.querySelector('input[name="dastavka"]:checked').value.toLowerCase()
+    if (dastavka_bor_yoki_yuq.toLowerCase() === "xa") {
+        let dastavka_narxi = document.getElementById('eshikdastavka').value
+        result["dastavka_narx"] = dastavka_narxi;
+    } else {
+        result["dastavka_narx"] = 0;
+    }
+    
+    let summa = 0;
+    
+    summa += result["kvardat_razmer"] * result["eshik_kvadrati_narxi"];
+    summa = Math.round(summa);
+    summa += parseInt(result["zamok"]) + result["petle"] + result["nalichnik_narx"] + result["kukla_narx"];
+    if (result["qosh_narxi"]) {
+        summa += result["qosh_narxi"];
+    }
+    if (result["dabor_narx"]) {
+        summa += result["dabor_narx"];
+    }
+    if (result["patshelnik_narx"]) {
+        summa += result["patshelnik_narx"];
+    }
+    if (result["oyna_summa"]) {
+        summa += result["oyna_summa"];
+    }
+    if (result["dastavka_narx"]) {
+        summa += result["dastavka_narx"];
+    }
+    if (result["ustanovka_narx"]) {
+        summa += result["ustanovka_narx"];
+    }
+
+    var resultElement = document.getElementById("result");
+    var totalCostElement = document.getElementById("totalCost");
+    totalCostElement.textContent = "Hisoblangan Narx: " + summa + '000';
+    resultElement.style.display = 'block';
+    // console.log(summa);
+    // console.log(result);
     
     //######################################################################//
 

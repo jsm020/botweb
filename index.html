@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label for="eshikZamok">Zamok narxini yozing:</label>
-                <input type="text" id="eshikZamok" name="zamok">
+                <input type="number" id="eshikZamok" name="zamok">
             </div>
             <div class="form-group">
                 <label for="eshikPetle">Petle tanlang:</label>
@@ -78,22 +78,24 @@
                 <input type="number" id="DaborRazmer" name="Dabor">
             </div>
             <div class="form-group">
-                <label>Nalichnik bor yoki yuq:</label>
-                <label><input type="radio" name="Nalichnik" value="bor">Bor</label>
-                <label><input type="radio" name="Nalichnik" value="yuq">Yuq</label>
+                <label for="eshiknalichni">Nalichnik tanlang:</label>
+                <select id="eshiknalichni" name="nalichni">
+                    <option value="20">nalichnik 8sm</option>
+                    <option value="25">nalichnik 10sm</option>
+                </select>
             </div>
-            <div class="form-group" id="hidden_div_nalichnik">
+            <div class="form-group">
                 <label for="NalichnikeshikRazmer">Nalichnik razmer</label>
-                <input type="number" id="NalichnikeshikRazmer" name="Nalichnik">
+                <input type="number" id="NalichnikeshikRazmer" name="nalichnik">
             </div>
             <div class="form-group">
                 <label>Padshelnik bor yoki yuq:</label>
-                <label><input type="radio" name="padshelnik" value="bor"> bor</label>
-                <label><input type="radio" name="padshelnik" value="yuq"> yuq</label>
+                <label><input type="radio" name="padshelnik" value="bor"> Bor</label>
+                <label><input type="radio" name="padshelnik" value="yuq"> Yuq</label>
             </div>
             <div class="form-group" id="hidden_div_padshelnik">
-                <label for="eshikRazmer">Padshelnik razmer</label>
-                <input type="number" id="eshikRazmer" name="razmer">
+                <label for="PadshelnikeshikRazmer">Padshelnik razmer</label>
+                <input type="number" id="PadshelnikeshikRazmer" name="razmer">
             </div>
             <div class="form-group">
                 <label>Qushimcha oyna bor yoki yuq:</label>
@@ -102,7 +104,7 @@
             </div>
             <div class="form-group" id="hidden_div_oyna">
                 <label for="oynaNumber">oyna necha dona</label>
-                <input type="number" id="eshikRazmer" name="oynanumber">
+                <input type="number" id="oynaNumber" name="oynanumber">
             </div>
             <div class="form-group">
                 <label>ustanovka bor yoki yuq:</label>
@@ -110,8 +112,8 @@
                 <label><input type="radio" name="ustanovka" value="yuq"> yuq</label>
             </div>
             <div class="form-group" id="hidden_div_ustanovka">
-                <label for="eshikRazmer">Ustanovka narx</label>
-                <input type="number" id="eshikRazmer" name="razmer">
+                <label for="eshikustanovka">Ustanovka narx</label>
+                <input type="number" id="eshikustanovka" name="razmer">
             </div>
             <div class="form-group">
                 <label>Dastavka bor yoki yuq:</label>
@@ -119,15 +121,14 @@
                 <label><input type="radio" name="dastavka" value="yuq"> yuq</label>
             </div>
             <div class="form-group" id="hidden_div_dastavka">
-                <label for="eshikRazmer">Dastavka narxi</label>
-                <input type="text" id="eshikRazmer" name="razmer">
+                <label for="eshikdastavka">Dastavka narxi</label>
+                <input type="text" id="eshikdastavka" name="razmer">
             </div>
             <div class="form-group">
                 <button type="button" onclick="calculateCost()">Hisoblash</button>
             </div>
         </form>
         <div id="result">
-            <h3>Hisoblangan Narx:11111</h3>
             <p id="totalCost"></p>
         </div>
     </div>
