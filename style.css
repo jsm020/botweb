@@ -2,13 +2,19 @@ body {
     background-color: black;
 }
 
+.logo_div {
+    text-align: center; /* Logo matnni markazga joylashtirish */
+    margin-bottom: 20px; /* Logo va formaro'yi orasidagi bo'shliqni belgilash */
+}
+
+
 .container {
-    background-color: white;
-    width: auto; /* You can adjust the width according to your layout */
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: auto; /* Konteiner o'lchamini belgilash */
+    margin: 0 auto; /* Konteineri markazga joylashtirish */
+    padding: 20px; /* Konteinerdan o'ng va chap qirg'ichlar bo'ylab masofani belgilash */
+    background-color: #f2f2f2; /* Konteiner fon rangi */
+    border-radius: 10px; /* Konteiner qirg'ichlarining radiusi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Konteiner uchun yorqinlik effect */
 }
 
 .form-group {
@@ -45,9 +51,9 @@ body {
 }
 
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.form-group label {
+    display: block; /* Labelni blok element sifatida ko'rsatish */
+    margin-bottom: 5px; /* Label va inputlar orasidagi bo'shliqni belgilash */
 }
 
 input[type="text"],
@@ -65,12 +71,12 @@ option {
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #007bff; /* Tugma fon rangi */
+    color: #fff; /* Tugma matni rangi */
+    border: none; /* Tugma chiziqlarini olib tashlash */
+    padding: 10px 15px; /* Tugma kengligi va balandligi */
+    cursor: pointer; /* Tugma ustiga chorak qo'yish */
+    border-radius: 5px; /* Tugma qirg'ichlarining radiusi */
 }
 
 button:hover {
