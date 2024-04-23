@@ -315,7 +315,7 @@ function calculateCost() {
 
     var resultElement = document.getElementById("result");
     var totalCostElement = document.getElementById("totalCost");
-    totalCostElement.textContent = "Hisoblangan Narx: " + summa + '000';
+    totalCostElement.textContent = "Hisoblangan Narx: " + (summa*1000)
     resultElement.style.display = 'block';
     // console.log(summa);
     // console.log(result);
