@@ -1,5 +1,10 @@
+body {
+    background-color: black;
+}
+
 .container {
-    width: 50%; /* You can adjust the width according to your layout */
+    background-color: white;
+    width: auto; /* You can adjust the width according to your layout */
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
