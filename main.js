@@ -156,7 +156,7 @@ function calculateCost() {
     } else if (result["material"] === "2") {
         result["material"] = "shpon";
     }  
-    
+
 
     let razmer = document.getElementById('eshikRazmer').value;
     let razmer_list = razmer.split(" ");
@@ -180,10 +180,12 @@ function calculateCost() {
 
     result["kvardat_razmer"] = razmer_kvadrat;
     result["Tabaqalar"] = tabaqalar;
+
     let eshik_kv = document.getElementById('eshikKvadratPrice').value;
     result["eshik_kvadrati_narxi"] = eshik_kv;
     let eshik_kv_price = result["eshik_kvadrati_narxi"] * result["kvardat_razmer"];
     result["eshik_kv_price"] = eshik_kv_price;
+
     
     let zamok = document.getElementById('eshikZamok').value;
     let zamok_summa = zamok * razmer_list.length;
@@ -201,6 +203,7 @@ function calculateCost() {
         let qosh_oddiy_yoki_duti = document.querySelector('input[name="qosh_2"]:checked').value.toLowerCase();
         let qosh_soni = document.getElementById('eshikQoshNumber').value;
         let qosh_split = qosh_soni.split(' ');
+        // console.log(qosh_split)
         let new_material = Qosh_narxlari[material];
         let qosh_narxi_all = 0;
         for (let i = 0; i < result["Tabaqalar"].length; i++) {
@@ -276,15 +279,15 @@ function calculateCost() {
     let ustanovka_bor_yoki_yuq = document.querySelector('input[name="ustanovka"]:checked').value.toLowerCase()
     if (ustanovka_bor_yoki_yuq.toLowerCase() === "bor") {
         let ustanovka_narxi = document.getElementById('eshikustanovka').value
-        result["ustanovka_narx"] = ustanovka_narxi;
+        result["ustanovka_narx"] = parseFloat(ustanovka_narxi);
     } else {
         result["ustanovka_narx"] = 0;
     }
     
     let dastavka_bor_yoki_yuq = document.querySelector('input[name="dastavka"]:checked').value.toLowerCase()
-    if (dastavka_bor_yoki_yuq.toLowerCase() === "xa") {
+    if (dastavka_bor_yoki_yuq.toLowerCase() === "bor") {
         let dastavka_narxi = document.getElementById('eshikdastavka').value
-        result["dastavka_narx"] = dastavka_narxi;
+        result["dastavka_narx"] = parseFloat(dastavka_narxi);
     } else {
         result["dastavka_narx"] = 0;
     }
@@ -312,6 +315,7 @@ function calculateCost() {
     if (result["ustanovka_narx"]) {
         summa += result["ustanovka_narx"];
     }
+    // console.log(result)
 
     var resultElement = document.getElementById("result");
     var totalCostElement = document.getElementById("totalCost");
