@@ -164,7 +164,7 @@ function calculateCost() {
     let tabaqalar = [];
 
     for (let x of razmer_list) {
-        let razmer_num = x.split("x");
+        let razmer_num = x.split("*");
         let kvardat_razmer = parseFloat(razmer_num[0]) * parseFloat(razmer_num[1]);
         razmer_kvadrat += kvardat_razmer;
         if (0.6 < parseFloat(razmer_num[0]) && parseFloat(razmer_num[0]) < 1) {
@@ -321,6 +321,7 @@ function calculateCost() {
     var totalCostElement = document.getElementById("totalCost");
     totalCostElement.textContent = "Hisoblangan Narx: " + (summa*1000)
     resultElement.style.display = 'block';
+    console.log(JSON.stringify(result, null, 2));
     // console.log(summa);
     // console.log(result);
     
